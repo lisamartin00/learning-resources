@@ -7,7 +7,7 @@ class AppController {
   resourceTypes: any[];
   editingResource: LearningResource;
 
-  constructor(public $window: any, public $http: any) {
+  constructor(public $window: any) {
     let existingResourceList = $window.localStorage.getItem('resourceList');
     this.resourceList =  existingResourceList ? JSON.parse(existingResourceList) : [];
     this.getResourceTypes();
@@ -89,8 +89,6 @@ class AppController {
   }
 
   toggleEditMode (id: number, isEditMode: boolean) {
-    this.$window.console.log(id);
-    this.$window.debugger;
     let editingResourceIndex = this.getResourceIndexById(id);
     this.resourceList[editingResourceIndex].isInEditMode = isEditMode;
     this.$window.localStorage.setItem('resourceList', JSON.stringify(this.resourceList));
