@@ -2,6 +2,7 @@
   "dependencies": {
     "angular": "^1.6.2",
     "angular-ui-router": "1.0.0-beta.3",
+    "bootstrap": "^4.0.0-alpha.6",
     "todomvc-app-css": "^2.0.6"
   },
   "devDependencies": {
