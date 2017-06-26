@@ -108,6 +108,7 @@ var AppController = (function () {
     AppController.prototype.updateResource = function (id) {
         var editingResourceIndex = this.getResourceIndexById(id);
         this.editingResource.isInEditMode = false;
+        this.editingResource.iconClass = this.getTypeIconClass(this.editingResource.resourceTypeId);
         this.resourceList[editingResourceIndex] = this.editingResource;
         this.$window.localStorage.setItem('resourceList', JSON.stringify(this.resourceList));
     };
